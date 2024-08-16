@@ -1,0 +1,34 @@
+package PaidIntership;
+
+import java.util.List;
+
+public class TrainStatus {
+    public static void traiStatus() {
+        int[][][] seats = new int[3][3][3];
+        List<User> users = TrainChoices.getRegisteredUsers();
+
+        
+        for (User user : users) {
+            seats[user.getSelectedTrain() - 1][user.getSelectedBoogie() - 1][user.getSelectedSeat() - 1] = 1; 
+        }
+        for (int train = 0; train < seats.length; train++) {
+            System.out.println(" Train " + (train + 1) + " status:");
+            for (int boogie = 0; boogie < seats[train].length; boogie++) {
+                int bookedSeats = 0;
+                int seatCount = TrainChoices.seatCount;
+                System.out.print("  Boogie " + (boogie + 1) + ": ");
+                for (int seat = 0; seat < seats[train][boogie].length; seat++) {
+                    if (seats[train][boogie][seat] == 1) {
+                        bookedSeats++;
+                        System.out.print("Seat " + (seat + 1) + " (Booked), ");
+                    } else {
+                        System.out.print("Seat " + (seat + 1) + " (Empty), ");
+                    }
+                }
+                
+                int remainingSeats = seatCount - bookedSeats;
+                System.out.println(bookedSeats + " booked, " + remainingSeats + " remaining.");
+            }
+        }
+    }
+}
