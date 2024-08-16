@@ -1,0 +1,23 @@
+package PaidIntership;
+
+import java.util.List;
+
+public class CompleteInformation {
+public static void information() {
+List<User> users = TrainChoices.getRegisteredUsers();
+    
+    if (users.isEmpty()) {
+        System.out.println("No users registered yet.");
+    } else {
+        for (User user : users) {
+            System.out.println("Passenger ID: " + user.getId());
+            System.out.println(" Passenger Name: " + user.getName());
+            System.out.println("Passenger Age: " + user.getAge());
+            System.out.println("Booked Train: " + user.getSelectedTrain());
+            System.out.println("Booked in Boogie: " + user.getSelectedBoogie() );
+            System.out.println("Booked Seat: " + user.getSelectedSeat());
+            
+        }
+    }
+}
+}
