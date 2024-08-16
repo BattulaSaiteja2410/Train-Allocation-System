@@ -1,0 +1,30 @@
+package PaidIntership;
+
+import java.util.Scanner;
+
+public class PersonInformation {
+
+    public static void passenger() {
+        Scanner sc = new Scanner(System.in);
+        String retrievedID = EnterUserProfile.getID();
+        System.out.print("Enter the ID:");
+        String verificationID = sc.next();
+
+        if (retrievedID.equals(verificationID)) {
+            System.out.println("Retrieved ID: " + retrievedID);
+            String retrievedName = EnterUserProfile.getname();
+            System.out.println("Retrieved Name: " + retrievedName);
+            int retrievedAge = EnterUserProfile.getage();
+            System.out.println("Retrieved Age: " + retrievedAge);
+            int selectedTrain = TrainChoices.getTrain();
+            System.out.println("Selected Train: " + selectedTrain);
+            int selectedBoogie = TrainChoices.getBoogie();
+            System.out.println("Selected Boogie: " + selectedBoogie);
+            int selectedSeat = TrainChoices.getSeat();
+            System.out.println("Selected Seat: " + selectedSeat);
+        } else {
+            System.err.println("Entered wrong ID");
+        }
+    }
+    
+}
