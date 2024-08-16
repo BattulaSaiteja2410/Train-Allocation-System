@@ -1,0 +1,63 @@
+package PaidIntership;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class TrainChoices {
+   public static int trainCount = 3;
+   public static int boogieCount = 3;
+   public static int seatCount = 3;
+
+    private static int selectedTrain;
+    private static int selectedBoogie;
+    private static int selectedSeat;
+
+    private static List<User> registeredUsers = new ArrayList<>();
+
+    public static void train() {
+        Scanner sc = new Scanner(System.in);
+        String retrievedID = EnterUserProfile.getID();
+        System.out.print("Enter the ID:");
+        String verificationID = sc.next();
+
+        if (retrievedID.equals(verificationID)) {
+            System.out.println("<<<<<<!............WELCOME TO THE TRAIN SELECTION PORTAL................!>>>>>>");
+            System.out.println(" ");
+            System.out.println("If you want to travel from Station-A to Station-B, please select Train1. Enter '1'");
+            System.out.println("If you want to travel from Station-A to Station-C, please select Train2. Enter '2'");
+            System.out.println("If you want to travel from Station-A to Station-D, please select Train3. Enter '3'");
+            selectedTrain = sc.nextInt();
+            System.out.println("Enter 1 to select boogi-1");
+            System.out.println("Enter 2 to select boogi-2");
+            System.out.println("Enter 3 to select boogi-3");
+            selectedBoogie = sc.nextInt();
+            System.out.println("Enter 1 to select seat-1");
+            System.out.println("Enter 2 to select seat-2");
+            System.out.println("Enter 3 to select seat-3");
+            selectedSeat = sc.nextInt();
+            System.out.println("Your selected train: " + selectedTrain + ", boogie: " + selectedBoogie + ", seat: " + selectedSeat);
+            registeredUsers.add(new User(retrievedID, EnterUserProfile.getname(), EnterUserProfile.getage(), selectedTrain, selectedBoogie, selectedSeat));
+            
+            Menu.menu();
+        } else {
+            System.err.println("Entered wrong ID");
+        }
+    }
+
+    public static int getTrain() {
+        return selectedTrain;
+    }
+
+    public static int getBoogie() {
+        return selectedBoogie;
+    }
+
+    public static int getSeat() {
+        return selectedSeat;
+    }
+
+    public static List<User> getRegisteredUsers() {
+        return registeredUsers;
+    }
+}
