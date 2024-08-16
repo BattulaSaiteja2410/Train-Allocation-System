@@ -1,0 +1,41 @@
+package PaidIntership;
+
+import java.util.Scanner;
+import java.util.UUID;
+
+import java.util.Scanner;
+import java.util.UUID;
+
+public class EnterUserProfile {
+
+    
+    private static String ID;
+    private static String name;
+    private static int age;
+    public static void userProfile() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the passenger user name:");
+        name = sc.next();
+        System.out.print("Enter the passenger age:");
+        age = sc.nextInt();
+        UUID uuid = UUID.randomUUID();
+        ID = uuid.toString();
+        System.out.println("Your new Random-ID :" + ID);
+        System.out.println("YOUR REGISTRATION WAS SUCCESSFULLY COMPLETED");
+        Menu.menu();
+    }
+
+    public static String getname() {
+    	return name;
+    	
+    }
+    public static int getage() {
+    	
+    	return age;
+       
+    }
+    public static String getID() {
+    	
+        return ID;
+    }
+}
