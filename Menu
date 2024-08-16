@@ -1,0 +1,54 @@
+package PaidIntership;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Menu {
+	public static void menu() {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("[.......WELCOM TO THE RAILWAYS......]");
+		System.out.println();
+		System.out.println("SELECT THE OPTION FROM THE FOLLOWING MENU");
+		System.out.println("Select option '1' to Enter User Profile ");
+		System.out.println("Select option '2' to Train Choice ");
+		System.out.println("Select option '3' to Display Person Information ");
+		System.out.println("Select option '4' to Display Complete Information ");
+		System.out.println("Select option '5' to Display Train Status ");
+		System.out.println("Select option '6' to Display Train Status ");
+		
+		int menu_opstion;
+		while (true) {
+			
+			try {
+		menu_opstion=sc.nextInt();
+		if (menu_opstion==1) {
+			EnterUserProfile.userProfile();
+		}
+		else if(menu_opstion==2) {
+			TrainChoices.train();
+		}
+		else if (menu_opstion==3) {
+			PersonInformation.passenger();
+		}
+		else if (menu_opstion==4) {
+			CompleteInformation.information();
+		}
+		else if (menu_opstion==5) {
+			TrainStatus.traiStatus();
+		}
+		else if (menu_opstion==6) {
+			System.out.println("Thanks for visting RAILWAYS portel visti agin");
+			break;
+		}
+		else {
+			System.err.println("Intput in vailed");
+			System.out.println("Please enter the vailde input Thank you");
+		}
+		
+		}
+		catch (InputMismatchException ime) {
+			sc.next();
+		}
+		}
+	}
+}
