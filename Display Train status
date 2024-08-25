@@ -30,5 +30,6 @@ public class TrainStatus {
                 System.out.println(bookedSeats + " booked, " + remainingSeats + " remaining.");
             }
         }
+ Menu.menu();
     }
 }
