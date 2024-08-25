@@ -19,5 +19,6 @@ List<User> users = TrainChoices.getRegisteredUsers();
             
         }
     }
+ Menu.menu();
 }
 }
