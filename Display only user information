@@ -25,6 +25,7 @@ public class PersonInformation {
         } else {
             System.err.println("Entered wrong ID");
         }
+ Menu.menu();
     }
     
 }
